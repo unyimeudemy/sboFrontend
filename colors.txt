@@ -1,0 +1,10 @@
+
+LIGHT THEME
+navy blue = #004080
+dirty white = #DDEBEA
+dirty green = #3B8884
+
+DARK THEME
+navy blue = #004080
+dark ash = #424656
+light ash = #A6ABBD

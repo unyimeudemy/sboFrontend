@@ -1,0 +1,62 @@
+export const categoryAPI = [
+  {
+    title: "People's initial reaction",
+    subtitle: [
+      "Adjusting PPE",
+      "Changing position",
+      "Stopping task",
+      "Adjusting the task",
+      "Others",
+    ],
+  },
+  {
+    title: "Body position",
+    subtitle: [
+      "Pivot/Twisting",
+      "Line of Fire",
+      "Risk of falling",
+      "Risk of burns",
+      "Ascending/Descending",
+      "Lifting/Lowering",
+      "Posture",
+      "Grip",
+      "Others",
+    ],
+  },
+  {
+    title: "Personal Protective Equipment (PPE)",
+    subtitle: [
+      "Head",
+      "Respiratory",
+      "Eyes and face",
+      "Hearing",
+      "Hands and arms",
+      "Body",
+      "Feet and legs",
+      "Others",
+    ],
+  },
+  {
+    title: "Tools and Equipment",
+    subtitle: [
+      "Used correctly",
+      "Selection/condition",
+      "Appropriate for task/used",
+      "Others",
+    ],
+  },
+  {
+    title: "Procedures",
+    subtitle: [
+      "No written procedure",
+      "Inadequate",
+      "Adequate but not followed",
+      "LOTO/Energy Isolation",
+      "Others",
+    ],
+  },
+  {
+    title: "Work Environment",
+    subtitle: ["Area clean", "Area organized", "Area with leaks ", "Others"],
+  },
+];
