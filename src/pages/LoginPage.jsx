@@ -76,7 +76,7 @@ const LoginPage = () => {
     try {
       //   const res = await axios.post("http://localhost:8080/api/auth/login", {
       const res = await axios.post(
-        "http://sbobackend.onrender.com/api/auth/login",
+        "https://sbobackend.onrender.com/api/auth/login",
         {
           email,
           password,

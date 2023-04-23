@@ -99,7 +99,7 @@ const SignUpPage = () => {
     try {
       //   const res = await axios.post("http://localhost:8080/api/auth/signUp", {
       const res = await axios.post(
-        "http://sbobackend.onrender.com/api/auth/signUp",
+        "https://sbobackend.onrender.com/api/auth/signUp",
         {
           name,
           email,

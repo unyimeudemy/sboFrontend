@@ -113,7 +113,7 @@ const AboutUsPage = () => {
     try {
       //   const res = await axios.post("http://localhost:8080/api/user/feedback", {
       const res = await axios.post(
-        "http://sbobackend.onrender.com/api/user/feedback",
+        "https://sbobackend.onrender.com/api/user/feedback",
         {
           file: file,
           detail: detail,

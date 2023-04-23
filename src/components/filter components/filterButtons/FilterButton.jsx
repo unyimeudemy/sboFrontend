@@ -107,7 +107,7 @@ const FilterButton = () => {
       // console.log(queryString);
       const res = await axios.get(
         // `http://localhost:8080/api/sbo/allSBOs?${queryString}`,
-        `http://sbobackend.onrender.com/api/sbo/allSBOs?${queryString}`,
+        `https://sbobackend.onrender.com/api/sbo/allSBOs?${queryString}`,
         {
           headers: {
             "Content-Type": "application/json",
