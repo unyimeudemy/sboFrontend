@@ -74,11 +74,14 @@ const LoginPage = () => {
     dispatch(loginStart());
     console.log("login clicked");
     try {
-    //   const res = await axios.post("http://localhost:8080/api/auth/login", {
-      const res = await axios.post("http://sbo.onrender.com/api/auth/login", {
-        email,
-        password,
-      });
+      //   const res = await axios.post("http://localhost:8080/api/auth/login", {
+      const res = await axios.post(
+        "http://sbobackend.onrender.com/api/auth/login",
+        {
+          email,
+          password,
+        }
+      );
 
       //   console.log(res.data);
       navigate("/");

@@ -97,19 +97,22 @@ const SignUpPage = () => {
   const handleSignUp = async (e) => {
     e.preventDefault();
     try {
-    //   const res = await axios.post("http://localhost:8080/api/auth/signUp", {
-      const res = await axios.post("http://sbo.onrender.com/api/auth/signUp", {
-        name,
-        email,
-        staffID,
-        contact,
-        password,
-        passwordConfirm,
-        plantLocation,
-        department,
-        role,
-        company,
-      });
+      //   const res = await axios.post("http://localhost:8080/api/auth/signUp", {
+      const res = await axios.post(
+        "http://sbobackend.onrender.com/api/auth/signUp",
+        {
+          name,
+          email,
+          staffID,
+          contact,
+          password,
+          passwordConfirm,
+          plantLocation,
+          department,
+          role,
+          company,
+        }
+      );
 
       console.log(res.data);
       dispatch(loginSuccess(res.data));
