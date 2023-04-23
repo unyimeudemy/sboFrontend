@@ -2,6 +2,8 @@ import styled from "styled-components";
 import LandingPage from "./pages/LandingPage.jsx";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
+import MyProfile from "./pages/MyProfile.jsx";
+import FindSBOPage from "./pages/FindSBOPage.jsx";
 
 import {
   //   createBrowserRouter,
@@ -15,6 +17,9 @@ import LoginPage from "./pages/LoginPage.jsx";
 import SignUpPage from "./pages/SignUpPage.jsx";
 import CategoryPage from "./pages/CategoryPage.jsx";
 import SboForm from "./pages/SboForm.jsx";
+import FindStaffPage from "./pages/FindStaffPage.jsx";
+import AboutUsPage from "./pages/AboutUsPage.jsx";
+import FeedBackPage from "./pages/FeedBackPage.jsx";
 
 const Container = styled.div`
   background-color: #f4faff;
@@ -34,13 +39,18 @@ function App() {
     <Container>
       <BrowserRouter>
         <Wrapper>
-          <Header />
+          {/* <Header /> */}
           {/* <Hr /> */}
           <Routes>
             <Route path="/">
               <Route index element={<LandingPage />} />
               <Route path="login" element={<LoginPage />} />
               <Route path="home" element={<LandingPage />} />
+              <Route path="myProfile" element={<MyProfile />} />
+              <Route path="findSBOs" element={<FindSBOPage />} />
+              <Route path="searchStaff" element={<FindStaffPage />} />
+              <Route path="aboutUs" element={<AboutUsPage />} />
+              <Route path="feedback" element={<FeedBackPage />} />
               <Route path="categories" element={<CategoryPage />} />
               <Route path="sboForm" element={<SboForm />} />
               <Route path="signUp" element={<SignUpPage />} />

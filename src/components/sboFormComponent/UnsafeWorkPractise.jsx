@@ -3,6 +3,11 @@ import { Box, Tab, Tabs } from "@mui/material";
 import { useState } from "react";
 import styled from "styled-components";
 import { Label1, Label2, Label3 } from "./Labels";
+import { useDispatch } from "react-redux";
+import { tabChosen, tabNotChosen } from "../../redux/tabSlice";
+import { unsafeDetailFilled } from "../../redux/unsafeWorkPractiseSlice";
+import { detailEmpty } from "../../redux/safeWorkPractiseSlice";
+import { recommendationDetailEmpty } from "../../redux/recommendationSlice";
 
 const Container = styled.div`
   /* width: 200px; */
@@ -52,8 +57,22 @@ const Describtion = styled.textarea`
 
 const UnsafeWorkPractise = () => {
   const [tabIndex, setTabIndex] = useState(0);
+
+  const dispatch = useDispatch();
+
   const handleTabChange = (event, newTabIndex) => {
     setTabIndex(newTabIndex);
+    dispatch(tabChosen(newTabIndex));
+  };
+
+  /////////////////////////////////////////////////////////////
+  const [getDetail, setGetDetail] = useState("");
+  const handleDetail = (e) => {
+    e.preventDefault();
+    setGetDetail(e.target.value);
+    dispatch(recommendationDetailEmpty());
+    dispatch(detailEmpty());
+    dispatch(unsafeDetailFilled(getDetail));
   };
 
   return (
@@ -64,7 +83,11 @@ const UnsafeWorkPractise = () => {
           <Tab label={Label2().props.children} />
           <Tab label={Label3().props.children} />
         </Tabs>
-        <Describtion />
+        <Describtion
+          placeholder="Describtion"
+          name="describtion"
+          onChange={handleDetail}
+        />
       </Wrapper>
     </Container>
   );

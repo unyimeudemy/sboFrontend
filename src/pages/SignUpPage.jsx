@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { loginSuccess } from "../redux/userSlice";
 
 const Container = styled.div`
   display: flex;
@@ -76,22 +80,102 @@ const Avatar = styled.img`
 `;
 
 const SignUpPage = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [staffID, setStaffID] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordConfirm, setPasswordConfirm] = useState("");
+  const [plantLocation, setPlantLocation] = useState("");
+  const [department, setDepartment] = useState("");
+  const [role, setRole] = useState("");
+  const [company, setCompany] = useState("");
+  const [contact, setContact] = useState("");
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+    try {
+    //   const res = await axios.post("http://localhost:8080/api/auth/signUp", {
+      const res = await axios.post("http://sbo.onrender.com/api/auth/signUp", {
+        name,
+        email,
+        staffID,
+        contact,
+        password,
+        passwordConfirm,
+        plantLocation,
+        department,
+        role,
+        company,
+      });
+
+      console.log(res.data);
+      dispatch(loginSuccess(res.data));
+      navigate("/");
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   return (
     <Container>
       <Wrapper>
         <Text>SignUp as a new staff member</Text>
         <Avatar />
-        <Input placeholder="Full name" />
-        <Input placeholder="Email" />
-        <Input placeholder="Staff ID" />
-        <Input placeholder="Password" />
-        <Input placeholder="Password confirm" />
-        <Input placeholder="Plant Location" />
-        <Input placeholder="Department" />
-        <Input placeholder="Position" />
+        <Input
+          type="text"
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Full name"
+        />
+        <Input
+          type="email"
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
+        />
+        <Input
+          type="text"
+          onChange={(e) => setStaffID(e.target.value)}
+          placeholder="Staff ID"
+        />
+        <Input
+          type="tel"
+          onChange={(e) => setContact(e.target.value)}
+          placeholder="Phone number"
+        />
+        <Input
+          type="password"
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+        />
+        <Input
+          type="password"
+          onChange={(e) => setPasswordConfirm(e.target.value)}
+          placeholder="Password confirm"
+        />
+        <Input
+          type="text"
+          onChange={(e) => setPlantLocation(e.target.value)}
+          placeholder="Plant Location"
+        />
+        <Input
+          type="text"
+          onChange={(e) => setDepartment(e.target.value)}
+          placeholder="Department"
+        />
+        <Input
+          type="text"
+          onChange={(e) => setRole(e.target.value)}
+          placeholder="Role"
+        />
         <Textsm>If you are a contractor</Textsm>
-        <Input placeholder="Company" />
-        <Button>SignUp</Button>
+        <Input
+          type="text"
+          onChange={(e) => setCompany(e.target.value)}
+          placeholder="Company"
+        />
+        <Button onClick={handleSignUp}>SignUp</Button>
       </Wrapper>
     </Container>
   );

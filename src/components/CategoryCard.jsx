@@ -7,6 +7,7 @@ const Container = styled.div`
   display: flex;
   align-content: center;
   justify-content: center;
+
   /* @media only screen and (max-width: 425px) {
     display: none;
   } */
@@ -37,13 +38,18 @@ const Card = styled.div`
   height: auto;
   border: 1px solid #3ea6ff;
   border-radius: 10px;
-  background-color: #3ea6ff;
+  background-color: #3377ff;
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: center;
   gap: 5px;
   padding: 5px;
+
+  @media only screen and (min-width: 768px) {
+    width: 300px;
+    height: auto;
+  }
 `;
 
 const CardInside = styled.div`
@@ -58,6 +64,12 @@ const CardInside = styled.div`
   justify-content: center;
   margin-bottom: 5px;
   padding: 5px;
+
+  @media only screen and (min-width: 768px) {
+    width: 290px;
+    /* height: 200px; */
+    height: auto;
+  }
 `;
 
 const CategoryDetail = styled.div`
@@ -66,7 +78,7 @@ const CategoryDetail = styled.div`
 `;
 
 const CategoryCard = ({ title, subtitles }) => {
-  subtitles?.map((subtitle, i) => console.log(subtitle));
+  //   subtitles?.map((subtitle, i) => console.log(subtitle));
   return (
     <Container>
       <Wrapper>
@@ -75,7 +87,7 @@ const CategoryCard = ({ title, subtitles }) => {
           <CategoryDetail>
             <CardInside>
               {subtitles?.map((subtitle, i) => (
-                <Subtitle subtitle={subtitle} />
+                <Subtitle key={i} subtitle={subtitle} title={title} />
               ))}
             </CardInside>
           </CategoryDetail>

@@ -1,6 +1,6 @@
 export const categoryAPI = [
   {
-    title: "People's initial reaction",
+    title: "Peoples initial reaction",
     subtitle: [
       "Adjusting PPE",
       "Changing position",
@@ -12,12 +12,12 @@ export const categoryAPI = [
   {
     title: "Body position",
     subtitle: [
-      "Pivot/Twisting",
+      "Pivot or Twisting",
       "Line of Fire",
       "Risk of falling",
       "Risk of burns",
-      "Ascending/Descending",
-      "Lifting/Lowering",
+      "Ascending or Descending",
+      "Lifting or Lowering",
       "Posture",
       "Grip",
       "Others",
@@ -41,7 +41,7 @@ export const categoryAPI = [
     subtitle: [
       "Used correctly",
       "Selection/condition",
-      "Appropriate for task/used",
+      "Appropriate for task",
       "Others",
     ],
   },
@@ -51,7 +51,7 @@ export const categoryAPI = [
       "No written procedure",
       "Inadequate",
       "Adequate but not followed",
-      "LOTO/Energy Isolation",
+      "LOTO",
       "Others",
     ],
   },

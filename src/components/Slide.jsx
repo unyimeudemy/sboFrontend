@@ -69,7 +69,7 @@ const Btn = styled.div`
   justify-content: center;
 `;
 
-const Slide = ({ text, buttonText }) => {
+const Slide = ({ text, buttonText, handleCategory }) => {
   return (
     <Container>
       <Wrapper>
@@ -77,7 +77,7 @@ const Slide = ({ text, buttonText }) => {
         <Left>
           <Text>{text}</Text>
           <Btn>
-            <Button>{buttonText}</Button>
+            <Button onClick={handleCategory}>{buttonText}</Button>
           </Btn>
         </Left>
       </Wrapper>
