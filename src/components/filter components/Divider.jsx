@@ -129,10 +129,10 @@ const Divider = () => {
   const handleRefresh = async () => {
     dispatch(yesRefresh(true));
     try {
-      const res = await axios.get(`http://localhost:8080/api/sbo/allSBOs`, {
-        //   const res = await axios.get(
-        //     `https://sbobackend.onrender.com/api/sbo/allSBOs`,
-        //     {
+    //   const res = await axios.get(`http://localhost:8080/api/sbo/allSBOs`, {
+          const res = await axios.get(
+            `https://sbobackend.onrender.com/api/sbo/allSBOs`,
+            {
         headers: {
           "Content-Type": "application/json",
           Authorization: "Bearer " + token,

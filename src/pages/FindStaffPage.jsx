@@ -28,8 +28,8 @@ const FindStaffPage = () => {
     const fetchUser = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8080/api/user/getAllStaff${query}`,
-          //   `https://sbobackend.onrender.com/api/user/getAllStaff${query}`,
+          //   `http://localhost:8080/api/user/getAllStaff${query}`,
+          `https://sbobackend.onrender.com/api/user/getAllStaff${query}`,
           {
             headers: {
               "Content-Type": "application/json",

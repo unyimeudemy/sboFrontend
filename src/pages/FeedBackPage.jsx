@@ -111,10 +111,10 @@ const AboutUsPage = () => {
 
   const handleFeedBack = async () => {
     try {
-      const res = await axios.post("http://localhost:8080/api/user/feedback", {
-        //   const res = await axios.post(
-        //     "https://sbobackend.onrender.com/api/user/feedback",
-        //     {
+    //   const res = await axios.post("http://localhost:8080/api/user/feedback", {
+          const res = await axios.post(
+            "https://sbobackend.onrender.com/api/user/feedback",
+            {
         file: file,
         detail: detail,
       });

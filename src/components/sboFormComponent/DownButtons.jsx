@@ -112,10 +112,10 @@ const DownButtons = () => {
 
       const res = await axios.post(
         currentUser
-          ? "http://localhost:8080/api/sbo/fillSboStaff"
-          : //   ? "https://sbobackend.onrender.com/api/sbo/fillSboStaff"
-            "http://localhost:8080/api/sbo/fillSboVisitor",
-        //   : "https://sbobackend.onrender.com/api/sbo/fillSboVisitor",
+        //   ? "http://localhost:8080/api/sbo/fillSboStaff"
+          ? "https://sbobackend.onrender.com/api/sbo/fillSboStaff"
+            // "http://localhost:8080/api/sbo/fillSboVisitor",
+          : "https://sbobackend.onrender.com/api/sbo/fillSboVisitor",
         {
           details: detail.detail ? detail.detail : unsafeDetail.unsafeDetail,
           title: tabInfo[title.title]
