@@ -180,7 +180,7 @@ const SboForm = () => {
           <Items>
             <AddFiles />
           </Items>
-          <ItemsProgress
+          {/* <ItemsProgress
             percentageAudio={addAudioProgressContent}
             percentageVideo={addVideoProgressContent}
             percentageImage={addImageProgressContent}
@@ -196,7 +196,7 @@ const SboForm = () => {
                 <ImageProgressBar percentageImage={addImageProgressContent} />
               </ImageProgressBarBorder>
             </ProgressBar>
-          </ItemsProgress>
+          </ItemsProgress> */}
           <Items>
             <Department />
           </Items>

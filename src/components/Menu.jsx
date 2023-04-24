@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import HowToRegOutlinedIcon from "@mui/icons-material/HowToRegOutlined";
 import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
@@ -12,7 +12,7 @@ import { logout } from "../redux/userSlice";
 import LogoutPrompt from "./sboFormComponent/LogoutPrompt.jsx";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import gziLogo from "../images/gziLogo.svg";
+import LOGO from "../images/LOGO.svg";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 const Container = styled.div`
@@ -22,10 +22,13 @@ const Container = styled.div`
   width: 200px;
   z-index: 2;
   top: 0px;
+  left: 0px;
+
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.532);
 
   @media only screen and (min-width: 768px) {
     left: 0px;
+    /* display: none; */
   }
 `;
 
@@ -41,6 +44,8 @@ const Item = styled.div`
   gap: 10px;
   padding: 10px;
   border-radius: 5px;
+  font-weight: 700;
+  color: #002b80;
 
   :hover {
     cursor: pointer;
@@ -110,7 +115,7 @@ const Menu = ({ menu, setMenu }) => {
       <Container>
         <Wrapper>
           <LogoWrapper>
-            <Logo src={gziLogo} />
+            <Logo src={LOGO} />
             <Item>
               <ArrowBackIcon onClick={() => setMenu(!menu)} />
             </Item>

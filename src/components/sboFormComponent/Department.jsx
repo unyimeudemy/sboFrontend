@@ -35,13 +35,13 @@ const Buttons = styled.div`
   display: flex;
   gap: 1px;
   color: white;
-  background-color: #1a1aff;
+  background-color: #003cb3;
   border-radius: 5px;
   padding: 6px;
 `;
 
 const Button = styled.button`
-  background-color: #1a1aff;
+  background-color: #003cb3;
   color: white;
   /* padding: 6px; */
   font-size: 16px;

@@ -10,7 +10,7 @@ const Container = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #d9d9d9a8;
+  background-color: #d9d9d95b;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,7 +21,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
   width: 250px;
   height: 90px;
-  background-color: #e0dbdb;
+  background-color: #e6eeff;
   color: black;
   padding: 10px;
   display: flex;
@@ -29,14 +29,17 @@ const Wrapper = styled.div`
   gap: 20px;
   position: relative;
   border-radius: 5px;
-  border: #595959 solid 1px;
+  border: #002b80 solid 1px;
   /* top: 150px; */
   right: 0px;
   align-items: center;
   justify-content: center;
 `;
 
-const H1 = styled.div``;
+const H1 = styled.div`
+  color: #002b80;
+  font-weight: 800;
+`;
 
 const Buttons = styled.div`
   display: flex;
@@ -46,11 +49,11 @@ const Buttons = styled.div`
 const Button1 = styled.button`
   border-radius: 10px;
   width: 100px;
-  color: #424656;
+  color: white;
   padding: 5px 15px;
-  background-color: #3ea6ff;
-  border: 1px solid #3ea6ff;
-  font-weight: 500;
+  background-color: #002b80;
+  border: 1px solid #002b80;
+  font-weight: 700;
   cursor: pointer;
   text-align: center;
   display: flex;
@@ -62,11 +65,11 @@ const Button1 = styled.button`
 const Button2 = styled.button`
   border-radius: 10px;
   width: 100px;
-  color: #424656;
+  color: #002b80;
   padding: 5px 15px;
   background-color: transparent;
-  border: 1px solid #3ea6ff;
-  font-weight: 500;
+  border: 1px solid #002b80;
+  font-weight: 700;
   cursor: pointer;
   text-align: center;
   display: flex;

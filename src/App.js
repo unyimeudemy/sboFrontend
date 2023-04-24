@@ -20,6 +20,7 @@ import SboForm from "./pages/SboForm.jsx";
 import FindStaffPage from "./pages/FindStaffPage.jsx";
 import AboutUsPage from "./pages/AboutUsPage.jsx";
 import FeedBackPage from "./pages/FeedBackPage.jsx";
+import { useEffect } from "react";
 
 const Container = styled.div`
   background-color: #f4faff;

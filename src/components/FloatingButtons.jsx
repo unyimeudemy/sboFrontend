@@ -7,7 +7,7 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 
 const ButtonFloating = styled.div`
   position: fixed;
-  bottom: 40px;
+  bottom: 60px;
   right: 40px;
   display: flex;
   flex-direction: column;
@@ -16,20 +16,20 @@ const ButtonFloating = styled.div`
   @media only screen and (max-width: 768px) {
     right: 20px;
     gap: 15px;
-    bottom: 30px;
+    bottom: 60px;
   }
 `;
 
 const ButtonFloat = styled.button`
   border-radius: 10px;
-  width: 150px;
-  height: 70px;
+  width: 130px;
+  height: 55px;
   color: white;
   padding: 5px 15px;
   background-color: #003cb3;
   border: 1px solid blue;
   font-weight: 900;
-  font-size: large;
+  font-size: medium;
   cursor: pointer;
   text-align: center;
   display: flex;

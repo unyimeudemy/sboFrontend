@@ -25,6 +25,11 @@ const Container = styled.div`
   cursor: pointer;
   margin: 15px;
 
+  :hover {
+    cursor: pointer;
+    background-color: #9abbf8;
+  }
+
   @media only screen and (min-width: 768px) {
     height: 130px;
   }
@@ -56,7 +61,7 @@ const StaffName = styled.div`
 `;
 
 const Department = styled.div`
-  font-family: cursive;
+  /* font-family: cursive; */
   font-size: smaller;
 
   @media only screen and (max-width: 768px) {
@@ -104,7 +109,7 @@ const Line1 = styled.div`
   flex-wrap: wrap;
   margin: 0;
   font-size: smaller;
-  font-family: cursive;
+  /* font-family: cursive; */
   @media only screen and (min-width: 768px) {
     display: none;
   }
@@ -142,7 +147,7 @@ const SBOBody = styled.div`
   font-size: small;
   font-weight: 500;
   color: #404040;
-  font-family: cursive;
+  /* font-family: cursive; */
 `;
 
 const Recommendation = styled.div`
@@ -236,7 +241,7 @@ const BodyDetail = styled.div`
   font-weight: 500;
   font-size: small;
   font-size: 11px;
-  font-family: cursive;
+  /* font-family: cursive; */
 
   @media only screen and (min-width: 768px) {
     font-size: 13px;
@@ -440,7 +445,7 @@ const SBOCard = ({ SBO }) => {
           <Middle>
             <Detail>
               <Words>
-                <Line1>{SBO.details}</Line1>
+                <Line1>{SBO?.details}</Line1>
                 {/* <Line2>{lineTwo}</Line2> */}
               </Words>
               <LineForLarge>
@@ -505,7 +510,7 @@ const SBOCard = ({ SBO }) => {
               <BodyTitle>Detail</BodyTitle>
               <BodyDetail>{SBO?.details}</BodyDetail>
               <BodyTitle>Recommendation</BodyTitle>
-              <BodyDetail>{SBO.recommendation}</BodyDetail>
+              <BodyDetail>{SBO?.recommendation}</BodyDetail>
               <BodyTitle>Category</BodyTitle>
               <BodyDetail>{SBO?.category}</BodyDetail>
               <BodyTitle>Subcategory</BodyTitle>
@@ -517,22 +522,22 @@ const SBOCard = ({ SBO }) => {
             </BodyDetails>
             <Files>
               <VideoWrapper>
-                <VideoFrame src={SBO.videoURL} controls />
+                <VideoFrame src={SBO?.videoURL} controls />
               </VideoWrapper>
               <ImageWrapper>
                 <ImageFile
-                  src={SBO.imageURL}
+                  src={SBO?.imageURL}
                   isEnlarged={isEnlarged}
                   onClick={handleImageEnlarged}
                 />
                 <ImageFile
-                  src={SBO.imageURL}
+                  src={SBO?.imageURL}
                   isEnlarged={isEnlarged}
                   onClick={handleImageEnlarged}
                 />
               </ImageWrapper>
               <AudioWrapper>
-                <AudioFile src={SBO.audioURL} controls />
+                <AudioFile src={SBO?.audioURL} controls />
               </AudioWrapper>
             </Files>
           </Body>

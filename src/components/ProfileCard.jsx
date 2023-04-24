@@ -13,6 +13,11 @@ const Container = styled.div`
   padding: 5px;
   cursor: pointer;
 
+  :hover {
+    cursor: pointer;
+    background-color: #9abbf8;
+  }
+
   @media only screen and (min-width: 768px) {
     width: 600px;
     margin-right: 144px;

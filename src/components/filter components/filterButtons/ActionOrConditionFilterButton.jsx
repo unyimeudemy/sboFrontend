@@ -9,6 +9,8 @@ import { noVisitorPopUp } from "../../../redux/filter-components-slices/visitorS
 import { noTimePopUp } from "../../../redux/filter-components-slices/timeSlice";
 import { noStaffIDPopUp } from "../../../redux/filter-components-slices/staffIDSlice";
 import { noTitleQuery } from "../../../redux/filterDataSlices/titleDataSlice";
+import { noPlantLocationPopUp } from "../../../redux/filter-components-slices/plantLocationSlice";
+import { noDepartmentStaffPopUp } from "../../../redux/filter-components-slices/departmentStaffSlice";
 // import { departmentChosen } from "../../../redux/departmentSlice";
 
 const SplitButtonContainer = styled.div`
@@ -27,13 +29,13 @@ const Buttons = styled.div`
   display: flex;
   gap: 1px;
   color: white;
-  background-color: #1a1aff;
+  background-color: #003cb3;
   border-radius: 5px;
   padding: 6px;
 `;
 
 const Button = styled.button`
-  background-color: #1a1aff;
+  background-color: #003cb3;
   color: white;
   width: 150px;
   font-size: 16px;
@@ -52,6 +54,8 @@ const ActionOrConditionFilterButton = () => {
   const handlePopUp = () => {
     dispatch(actionOrConditionPopUp());
     dispatch(noDepartmentPopUp());
+    dispatch(noPlantLocationPopUp());
+    dispatch(noDepartmentStaffPopUp());
     dispatch(noVisitorPopUp());
     dispatch(noTimePopUp());
     dispatch(noStaffIDPopUp());

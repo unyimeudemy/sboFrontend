@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
@@ -12,9 +12,7 @@ import safety3 from "../images/safety3.avif";
 import teamSBO2 from "../images/teamSBO2.png";
 import latestEvent from "../images/latestEvent.jfif";
 import AllSBO from "../images/AllSBO.jfif";
-
-import CommentIcon from "@mui/icons-material/Comment";
-import TelegramIcon from "@mui/icons-material/Telegram";
+import FloatingButtons from "../components/FloatingButtons";
 
 const Container = styled.div`
   margin: 0px;
@@ -42,34 +40,6 @@ const Button = styled.button`
     width: 120px;
     padding: 5px 15px;
     font-size: medium;
-  }
-`;
-
-const ButtonFloat = styled.button`
-  border-radius: 10px;
-  width: 150px;
-  height: 70px;
-  color: white;
-  padding: 5px 15px;
-  background-color: #003cb3;
-  border: 1px solid blue;
-  font-weight: 900;
-  font-size: large;
-  cursor: pointer;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  border: 4px solid white;
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
-
-  @media only screen and (max-width: 768px) {
-    border-radius: 100%;
-    width: 55px;
-    height: 55px;
-    font-size: medium;
-    font-weight: 600;
   }
 `;
 
@@ -140,21 +110,6 @@ const Buttons = styled.div`
 
   @media only screen and (max-width: 768px) {
     gap: 10px;
-  }
-`;
-
-const ButtonFloating = styled.div`
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-
-  @media only screen and (max-width: 768px) {
-    right: 20px;
-    bottom: 20px;
-    gap: 15px;
   }
 `;
 
@@ -333,12 +288,6 @@ const InfoR = styled.div`
   }
 `;
 
-const FloatText = styled.div`
-  @media only screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
 const Picture = styled.img`
   width: 400px;
 
@@ -350,12 +299,6 @@ const Picture = styled.img`
 const LandingPage = () => {
   const navigate = useNavigate();
   const { currentUser } = useSelector((state) => state.user);
-
-  const handleCategory = () => {
-    currentUser === null ? navigate("/login") : navigate("/categories");
-  };
-
-  console.log("💥💥", currentUser);
 
   return (
     <>
@@ -409,16 +352,7 @@ const LandingPage = () => {
           </BottomLast>
         </Wrapper>
       </Container>
-      <ButtonFloating>
-        <ButtonFloat onClick={handleCategory}>
-          <CommentIcon />
-          <FloatText>Fill an SBO</FloatText>
-        </ButtonFloat>
-        <ButtonFloat onClick={() => navigate("/feedback")}>
-          <TelegramIcon />
-          <FloatText>Feedback</FloatText>
-        </ButtonFloat>
-      </ButtonFloating>
+      <FloatingButtons />
     </>
   );
 };

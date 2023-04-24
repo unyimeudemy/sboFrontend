@@ -16,7 +16,7 @@ const Container = styled.div`
   @media only screen and (min-width: 768px) {
     position: absolute;
     top: 135px;
-    left: 118px;
+    left: 100px;
   }
 
   /* @media only screen and (min-width: 1024px) {

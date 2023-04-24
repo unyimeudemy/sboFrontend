@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import gziLogo from "../images/gziLogo.svg";
+import LOGO from "../images/LOGO.svg";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import Menu from "./Menu";
 import { useNavigate } from "react-router-dom";
+
+const Fragment = styled.div``;
 
 const Container = styled.div`
   background-color: #f4faff;
@@ -137,21 +139,61 @@ const Header = () => {
   const [q, setQ] = useState("");
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (menu) {
+      console.log("inside", menu);
+      // Disable scrolling on mount
+      document.body.style.overflow = "hidden";
+    } else {
+      console.log("outside", menu);
+      // Re-enable scrolling on unmount
+      document.body.style.overflow = "auto";
+    }
+  }, [menu]);
+
+  //////////////////////////////////////////
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenu(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuRef]);
+
+  ////////////////////////////////////////////
+
+  const handleKeyPress = (e) => {
+    console.log(e);
+    if (e.key === "Enter") {
+      navigate(`/searchStaff?q=${q}`);
+    }
+  };
+
   return (
-    <>
+    <Fragment ref={menuRef}>
       <Container>
         <Wrapper>
           <Upper>
             <Item onClick={() => setMenu(!menu)}>
               <MenuIcon />
             </Item>
-            <Logo src={gziLogo} />
+            <Logo src={LOGO} />
             <ProfilePicture></ProfilePicture>
           </Upper>
           <Lower>
             <Search>
               <Input
+                type="search"
                 placeholder="Search a staff by name or ID"
+                onKeyDown={handleKeyPress}
                 onChange={(e) => setQ(e.target.value)}
               ></Input>
               <Item onClick={() => navigate(`/searchStaff?q=${q}`)}>
@@ -167,11 +209,13 @@ const Header = () => {
             <Item onClick={() => setMenu(!menu)}>
               <MenuIcon />
             </Item>
-            <Logo src={gziLogo} />
+            <Logo src={LOGO} />
             <Lower>
               <Search>
                 <Input
+                  type="search"
                   placeholder="Search a staff by ID"
+                  onKeyDown={handleKeyPress}
                   onChange={(e) => setQ(e.target.value)}
                 ></Input>
                 <Item onClick={() => navigate(`/searchStaff?q=${q}`)}>
@@ -186,8 +230,10 @@ const Header = () => {
         </Wrapper>
       </Container2>
       {menu && <Menu menu={menu} setMenu={setMenu} />}
-    </>
+    </Fragment>
   );
 };
 
 export default Header;
+
+///////////////////////////////

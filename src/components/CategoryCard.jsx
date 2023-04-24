@@ -36,9 +36,9 @@ const Text = styled.div`
 const Card = styled.div`
   width: 200px;
   height: auto;
-  border: 1px solid #3ea6ff;
+  border: 1px solid #003cb3;
   border-radius: 10px;
-  background-color: #3377ff;
+  background-color: #003cb3;
   display: flex;
   flex-direction: column;
   align-content: center;

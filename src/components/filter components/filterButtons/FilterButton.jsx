@@ -16,6 +16,9 @@ import { noTitleQuery } from "../../../redux/filterDataSlices/titleDataSlice";
 import { noVisitorQuery } from "../../../redux/filterDataSlices/visitorDataSlice";
 import { yesSBO } from "../../../redux/SBOSlice";
 import { yesRefresh } from "../../../redux/filter-components-slices/refreshSBOSlice";
+import { noPlantLocationPopUp } from "../../../redux/filter-components-slices/plantLocationSlice";
+import { noPlantLocationQuery } from "../../../redux/filterDataSlices/plantLocationDataSlice";
+import { noDepartmentStaffQuery } from "../../../redux/filterDataSlices/departmentStaffDataSlice";
 
 const Container = styled.div``;
 
@@ -26,7 +29,7 @@ const Button = styled.button`
   width: 150px;
   color: white;
   padding: 5px 15px;
-  background-color: blue;
+  background-color: #003cb3;
   border: 1px solid blue;
   font-weight: 500;
   cursor: pointer;
@@ -106,8 +109,8 @@ const FilterButton = () => {
     try {
       // console.log(queryString);
       const res = await axios.get(
-        // `http://localhost:8080/api/sbo/allSBOs?${queryString}`,
-        `https://sbobackend.onrender.com/api/sbo/allSBOs?${queryString}`,
+        `http://localhost:8080/api/sbo/allSBOs?${queryString}`,
+        // `https://sbobackend.onrender.com/api/sbo/allSBOs?${queryString}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -126,6 +129,8 @@ const FilterButton = () => {
       dispatch(noTimeQuery());
       dispatch(noTitleQuery());
       dispatch(noVisitorQuery());
+      dispatch(noPlantLocationQuery());
+      dispatch(noDepartmentStaffQuery());
       dispatch(noBuildQueryString());
     } catch (error) {
       console.log(error.message);

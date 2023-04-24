@@ -57,7 +57,7 @@ const Icon = styled.label`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #1a1aff;
+  background-color: #003cb3;
   color: #ffffff;
   cursor: pointer;
   transition: background-color 0.3s ease;

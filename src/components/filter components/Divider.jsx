@@ -70,6 +70,31 @@ const Button = styled.button`
   margin-top: 10px;
 `;
 
+const Container2Outer = styled.div`
+  display: flex;
+  align-content: center;
+  justify-content: center;
+`;
+
+const Container2 = styled.div`
+  @media only screen and (min-width: 425px) {
+    position: absolute;
+    display: flex;
+    gap: 10px;
+    background-color: red;
+    width: 900px;
+    height: 7px;
+    justify-content: space-between;
+    /* margin-top: 10px; */
+  }
+`;
+
+const Position = styled.div`
+  height: 3px;
+  width: 30px;
+  background-color: white;
+`;
+
 const Divider = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -104,16 +129,15 @@ const Divider = () => {
   const handleRefresh = async () => {
     dispatch(yesRefresh(true));
     try {
-      //   const res = await axios.get(`http://localhost:8080/api/sbo/allSBOs`, {
-      const res = await axios.get(
-        `https://sbobackend.onrender.com/api/sbo/allSBOs`,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + token,
-          },
-        }
-      );
+      const res = await axios.get(`http://localhost:8080/api/sbo/allSBOs`, {
+        //   const res = await axios.get(
+        //     `https://sbobackend.onrender.com/api/sbo/allSBOs`,
+        //     {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+      });
       setRefreshedSBOs(res.data.data);
     } catch (error) {
       console.log(error.message);
@@ -127,6 +151,7 @@ const Divider = () => {
     <>
       <Container>
         <Hr />
+
         <Others>
           <Total>{`Total: ${fetchedSBOs.length}`}</Total>
           <FarRight>
@@ -136,12 +161,24 @@ const Divider = () => {
             </Button> */}
           </FarRight>
         </Others>
+
         {SBOs.length === 0 ? (
           <SBONotFoundPage />
         ) : (
           SBOs?.map((SBO) => <SBOCard key={SBO._id} SBO={SBO} />)
         )}
       </Container>
+      {/* <Container2Outer>
+          <Container2>
+            <Position>
+                
+            </Position>
+            <Position></Position>
+            <Position></Position>
+            <Position></Position>
+            <Position></Position>
+            <Position></Position>
+            <Position></Position> */}
       {timeBolean && <TimeFilterPopUp />}
       {actionOrConditionBolean && <ActionOrConditionFilterPopUp />}
       {categoryBolean && <CategoryFilterPopUp />}
@@ -150,6 +187,8 @@ const Divider = () => {
       {departmentStaffBolean && <DepartmentStaffFilterPopUp />}
       {visitorBolean && <VisitorFilterPopUp />}
       {plantLocationBolean && <PlantLocationFilterPopUp />}
+      {/* </Container2>
+        </Container2Outer> */}
     </>
   );
 };

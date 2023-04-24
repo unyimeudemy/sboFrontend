@@ -22,7 +22,7 @@ const Container = styled.div`
   @media only screen and (min-width: 768px) {
     position: absolute;
     top: 135px;
-    left: 410px;
+    left: 310px;
   }
 `;
 

@@ -21,10 +21,11 @@ const Container = styled.div`
 const Button = styled.button`
   border-radius: 10px;
   width: 100px;
+  height: 40px;
   color: white;
   padding: 5px 15px;
   background-color: transparent;
-  border: 1px solid #3ea6ff;
+  border: none;
   font-weight: 500;
   cursor: pointer;
   text-align: center;
@@ -33,7 +34,7 @@ const Button = styled.button`
   justify-content: center;
   gap: 5px;
   font-weight: 800;
-  background-color: #1a1aff;
+  background-color: #003cb3;
 `;
 
 const DownButtons = () => {
@@ -111,10 +112,10 @@ const DownButtons = () => {
 
       const res = await axios.post(
         currentUser
-        //   ? "http://localhost:8080/api/sbo/fillSboStaff"
-          ? "https://sbobackend.onrender.com/api/sbo/fillSboStaff"
-        //   : "http://localhost:8080/api/sbo/fillSboVisitor",
-          : "https://sbobackend.onrender.com/api/sbo/fillSboVisitor",
+          ? "http://localhost:8080/api/sbo/fillSboStaff"
+          : //   ? "https://sbobackend.onrender.com/api/sbo/fillSboStaff"
+            "http://localhost:8080/api/sbo/fillSboVisitor",
+        //   : "https://sbobackend.onrender.com/api/sbo/fillSboVisitor",
         {
           details: detail.detail ? detail.detail : unsafeDetail.unsafeDetail,
           title: tabInfo[title.title]
