@@ -37,8 +37,8 @@ const Hr = styled.hr`
 
 function App() {
   return (
-    <Container>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Container>
         <Wrapper>
           {/* <Header /> */}
           {/* <Hr /> */}
@@ -60,8 +60,8 @@ function App() {
           {/* <Hr /> */}
           {/* <Footer /> */}
         </Wrapper>
-      </BrowserRouter>
-    </Container>
+      </Container>
+    </BrowserRouter>
   );
 }
 
