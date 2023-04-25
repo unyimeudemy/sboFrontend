@@ -37,7 +37,7 @@ const Hr = styled.hr`
 
 function App() {
   return (
-    <BrowserRouter basename="/sbofrontend.onrender.com">
+    <BrowserRouter basename="/">
       {/* <BrowserRouter basename=""> */}
       <Container>
         <Wrapper>
