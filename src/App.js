@@ -40,8 +40,6 @@ function App() {
     <BrowserRouter>
       <Container>
         <Wrapper>
-          {/* <Header /> */}
-          {/* <Hr /> */}
           <Routes>
             <Route path="/">
               <Route index element={<LandingPage />} />
@@ -57,8 +55,6 @@ function App() {
               <Route path="signUp" element={<SignUpPage />} />
             </Route>
           </Routes>
-          {/* <Hr /> */}
-          {/* <Footer /> */}
         </Wrapper>
       </Container>
     </BrowserRouter>
