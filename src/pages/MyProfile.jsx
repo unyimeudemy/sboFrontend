@@ -106,13 +106,16 @@ const MyProfile = () => {
   const handleSBOPage = async () => {
     navigate("/findSBOs");
     try {
-    //   const res = await axios.get("http://localhost:8080/api/sbo/mySBOs", {
-          const res = await axios.get("https://sbobackend.onrender.com/api/sbo/mySBOs", {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + token,
-        },
-      });
+      //   const res = await axios.get("http://localhost:8080/api/sbo/mySBOs", {
+      const res = await axios.get(
+        "https://sbobackend.onrender.com/api/sbo/mySBOs",
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
+        }
+      );
       dispatch(yesSBO(res.data));
     } catch (error) {
       console.log(error);

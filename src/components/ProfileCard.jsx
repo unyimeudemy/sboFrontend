@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import ClickedProfile from "../pages/ClickedProfile";
+import { useDispatch } from "react-redux";
+import { yesClickedProfile } from "../redux/clickedProfileSlice";
 
 const Container = styled.div`
   width: 290px;
@@ -15,7 +19,7 @@ const Container = styled.div`
 
   :hover {
     cursor: pointer;
-    background-color: #9abbf8;
+    background-color: #b7cffa;
   }
 
   @media only screen and (min-width: 768px) {
@@ -52,8 +56,16 @@ const StaffID = styled.div`
 `;
 
 const ProfileCard = ({ staff }) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   return (
-    <Container>
+    <Container
+      onClick={() => {
+        dispatch(yesClickedProfile(staff));
+        navigate("/clickedProfile");
+      }}
+    >
       <ProfilePicture src="https://i.pravatar.cc/150?img=68" />
       <BasicInfo>
         <Name>{staff.name}</Name>

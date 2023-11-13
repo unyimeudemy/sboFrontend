@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import HowToRegOutlinedIcon from "@mui/icons-material/HowToRegOutlined";
 import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
@@ -7,10 +7,8 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../redux/userSlice";
+import { useSelector } from "react-redux";
 import LogoutPrompt from "./sboFormComponent/LogoutPrompt.jsx";
-import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import LOGO from "../images/LOGO.svg";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";

@@ -25,6 +25,7 @@ import plantLocationDataReducer from "../redux/filterDataSlices/plantLocationDat
 import SBOReducer from "../redux/SBOSlice.js";
 import filterQueryReducer from "../redux/filterQuerySlice.js";
 import filesReducer from "../redux/filesSlice.js";
+import clickedProfileReducer from "../redux/clickedProfileSlice.js";
 import addAudioProgressReducer from "../redux/addFilesProgressSlices/addAudioProgressSlice.js";
 import addVideoProgressReducer from "../redux/addFilesProgressSlices/addVideoProgressSlice.js";
 import addImageProgressReducer from "../redux/addFilesProgressSlices/addImageProgressSlice.js";
@@ -66,6 +67,7 @@ const rootReducer = combineReducers({
   plantLocationDataName: plantLocationDataReducer,
   refresh: refreshReducer,
   files: filesReducer,
+  clickedProfile: clickedProfileReducer,
   addAudioProgress: addAudioProgressReducer,
   addVideoProgress: addVideoProgressReducer,
   addImageProgress: addImageProgressReducer,

@@ -27,7 +27,7 @@ const Container = styled.div`
 
   :hover {
     cursor: pointer;
-    background-color: #9abbf8;
+    background-color: #b7cffa;
   }
 
   @media only screen and (min-width: 768px) {

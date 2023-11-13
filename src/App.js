@@ -21,9 +21,11 @@ import FindStaffPage from "./pages/FindStaffPage.jsx";
 import AboutUsPage from "./pages/AboutUsPage.jsx";
 import FeedBackPage from "./pages/FeedBackPage.jsx";
 import { useEffect } from "react";
+import ClickedProfile from "./pages/ClickedProfile.jsx";
 
 const Container = styled.div`
   background-color: #f4faff;
+  height: 100vh;
 `;
 
 const Wrapper = styled.div`
@@ -47,6 +49,7 @@ function App() {
               <Route path="login" element={<LoginPage />} />
               <Route path="home" element={<LandingPage />} />
               <Route path="myProfile" element={<MyProfile />} />
+              <Route path="clickedProfile" element={<ClickedProfile />} />
               <Route path="findSBOs" element={<FindSBOPage />} />
               <Route path="searchStaff" element={<FindStaffPage />} />
               <Route path="aboutUs" element={<AboutUsPage />} />
